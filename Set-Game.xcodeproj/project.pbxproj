@@ -31,6 +31,7 @@
 		D2804A71249716E600DDC793 /* SetGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
 		D2804A72249716E600DDC793 /* Array+Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 		D2804A7D24971CCF00DDC793 /* SetGameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetGameViewModel.swift; sourceTree = "<group>"; };
+		D2AD9749249E831500F91540 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D2CFE58B2495D04F0043F1D2 /* Set Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Set Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2CFE58E2495D04F0043F1D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2CFE5902495D04F0043F1D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +55,7 @@
 		D2CFE5822495D04F0043F1D2 = {
 			isa = PBXGroup;
 			children = (
-				D2CFE58D2495D04F0043F1D2 /* Set Game */,
+				D2CFE58D2495D04F0043F1D2 /* Set-Game */,
 				D2CFE58C2495D04F0043F1D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,7 +68,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D2CFE58D2495D04F0043F1D2 /* Set Game */ = {
+		D2CFE58D2495D04F0043F1D2 /* Set-Game */ = {
 			isa = PBXGroup;
 			children = (
 				D2CFE58E2495D04F0043F1D2 /* AppDelegate.swift */,
@@ -80,12 +81,13 @@
 				D2804A71249716E600DDC793 /* SetGameView.swift */,
 				D2804A6F249716E600DDC793 /* SetGame.swift */,
 				D2804A7D24971CCF00DDC793 /* SetGameViewModel.swift */,
-				D2CFE5942495D0550043F1D2 /* Assets.xcassets */,
 				D2CFE5992495D0550043F1D2 /* LaunchScreen.storyboard */,
 				D2CFE59C2495D0550043F1D2 /* Info.plist */,
+				D2AD9749249E831500F91540 /* README.md */,
+				D2CFE5942495D0550043F1D2 /* Assets.xcassets */,
 				D2CFE5962495D0550043F1D2 /* Preview Content */,
 			);
-			path = "Set Game";
+			path = "Set-Game";
 			sourceTree = "<group>";
 		};
 		D2CFE5962495D0550043F1D2 /* Preview Content */ = {
@@ -131,7 +133,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D2CFE5862495D04F0043F1D2 /* Build configuration list for PBXProject "Set Game" */;
+			buildConfigurationList = D2CFE5862495D04F0043F1D2 /* Build configuration list for PBXProject "Set-Game" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -313,10 +315,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Set Game/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Set-Game/Preview Content\"";
 				DEVELOPMENT_TEAM = A74TX23J32;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Set Game/Info.plist";
+				INFOPLIST_FILE = "Set-Game/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,10 +335,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Set Game/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Set-Game/Preview Content\"";
 				DEVELOPMENT_TEAM = A74TX23J32;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Set Game/Info.plist";
+				INFOPLIST_FILE = "Set-Game/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,7 +353,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D2CFE5862495D04F0043F1D2 /* Build configuration list for PBXProject "Set Game" */ = {
+		D2CFE5862495D04F0043F1D2 /* Build configuration list for PBXProject "Set-Game" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2CFE59D2495D0550043F1D2 /* Debug */,

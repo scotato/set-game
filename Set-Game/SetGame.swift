@@ -3,7 +3,6 @@
 //
 //  Created by Scott Dodge on 5/24/20.
 //  Copyright © 2020 Scott Dodge. All rights reserved.
-//
 
 import Foundation
 
@@ -11,6 +10,7 @@ struct SetGame<CardContent> where CardContent: Equatable {
     private(set) var cards: Array<Card>
     private(set) var score = 0
     private var lastCardFlippedAt = Date()
+    
     private var secondsSinceLastFlip: Int {
         Calendar.current.dateComponents([.second], from: lastCardFlippedAt, to: Date()).second!
     }
@@ -22,6 +22,31 @@ struct SetGame<CardContent> where CardContent: Equatable {
                 cards[index].isFaceUp = index == newValue
             }
         }
+    }
+    
+    enum ShapeCount {
+        case one
+        case two
+        case three
+    }
+
+
+    enum Shape {
+        case diamond
+        case squiggle
+        case oval
+    }
+
+    enum Shading {
+        case solid
+        case striped
+        case open
+    }
+    
+    enum Color {
+        case red
+        case green
+        case purple
     }
     
     mutating func choose(card: Card) {
