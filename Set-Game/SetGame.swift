@@ -6,85 +6,90 @@
 
 import Foundation
 
-struct SetGame<CardContent> where CardContent: Equatable {
-    private(set) var cards: Array<Card>
+struct SetGame {
+    private(set) var deck: Array<Card>
     private(set) var score = 0
-    private var lastCardFlippedAt = Date()
-    
-    private var secondsSinceLastFlip: Int {
-        Calendar.current.dateComponents([.second], from: lastCardFlippedAt, to: Date()).second!
-    }
-    
-    private var indexOfTheOneAndOnlyFaceUpCard: Int? {
-        get { cards.indices.filter { cards[$0].isFaceUp }.only }
-        set {
-            for index in cards.indices {
-                cards[index].isFaceUp = index == newValue
-            }
-        }
-    }
-    
-    enum ShapeCount {
-        case one
-        case two
-        case three
-    }
 
-
-    enum Shape {
-        case diamond
-        case squiggle
-        case oval
-    }
-
-    enum Shading {
-        case solid
-        case striped
-        case open
-    }
-    
-    enum Color {
-        case red
-        case green
-        case purple
-    }
+//    private var indexOfTheOneAndOnlyFaceUpCard: Int? {
+//        get { deck.indices.filter { deck[$0].isFaceUp }.only }
+//        set {
+//            for index in deck.indices {
+//                deck[index].isFaceUp = index == newValue
+//            }
+//        }
+//    }
     
     mutating func choose(card: Card) {
-        if let chosenIndex: Int = cards.fistIndex(matching: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched {
-            if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
-                if cards[chosenIndex].content == cards[potentialMatchIndex].content {
-                    cards[chosenIndex].isMatched = true
-                    cards[potentialMatchIndex].isMatched = true
-                    if secondsSinceLastFlip < 10 {
-                        score += (10 - secondsSinceLastFlip)
-                    } else {
-                        score += 1
-                    }
-                } else {
-                    score -= 1
-                }
-                self.cards[chosenIndex].isFaceUp = true
-                lastCardFlippedAt = Date()
-            } else {
-                indexOfTheOneAndOnlyFaceUpCard = chosenIndex
-            }
-        }
+//        if let chosenIndex: Int = deck.fistIndex(matching: card), !deck[chosenIndex].isFaceUp, !deck[chosenIndex].isMatched {
+//            if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
+//                if deck[chosenIndex].content == deck[potentialMatchIndex].content {
+//                    deck[chosenIndex].isMatched = true
+//                    deck[potentialMatchIndex].isMatched = true
+//                    if secondsSinceLastFlip < 10 {
+//                        score += (10 - secondsSinceLastFlip)
+//                    } else {
+//                        score += 1
+//                    }
+//                } else {
+//                    score -= 1
+//                }
+//                self.deck[chosenIndex].isFaceUp = true
+//                lastCardFlippedAt = Date()
+//            } else {
+//                indexOfTheOneAndOnlyFaceUpCard = chosenIndex
+//            }
+//        }
     }
     
-    init (numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
-        cards = Array<Card>()
-        for pairIndex in 0..<numberOfPairsOfCards {
-            let content = cardContentFactory(pairIndex)
-            cards.append(Card(content: content, id: pairIndex * 2))
-            cards.append(Card(content: content, id: pairIndex * 2 + 1))
+    init () {
+        deck = Array<Card>()
+        for shapeCount in Card.ShapeCount.allCases {
+            for shape in Card.Shape.allCases {
+                for shading in Card.Shading.allCases {
+                    for color in Card.Color.allCases {
+                        deck.append(Card(
+                            id: deck.count,
+                            shapeCount: shapeCount,
+                            shape: shape,
+                            shading: shading,
+                            color: color
+                        ))
+                    }
+                }
+            }
         }
-        cards.shuffle()
+        deck.shuffle()
     }
     
     struct Card: Identifiable {
-        var isFaceUp: Bool = false
-        var isMatched: Bool = false
-        var content: CardContent
-        var id: Int
+        let id: Int
+        let shapeCount: ShapeCount
+        let shape: Shape
+        let shading: Shading
+        let color: Color
+        
+        enum ShapeCount: Int, CaseIterable {
+            case one = 1
+            case two = 2
+            case three = 3
+        }
+
+        enum Shape: String, CaseIterable {
+            case diamond = "♦️"
+            case squiggle = "➰"
+            case oval = "🔵"
+        }
+
+        enum Shading: CaseIterable {
+            case solid
+            case striped
+            case open
+        }
+        
+        enum Color: CaseIterable {
+            case red
+            case green
+            case purple
+        }
     }
 }

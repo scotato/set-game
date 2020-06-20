@@ -9,20 +9,12 @@
 import Foundation
 
 class SetGameViewModel: ObservableObject {
-    @Published private var model: SetGame<String> = SetGameViewModel.createSetGame()
-
-    private static func createSetGame() -> SetGame<String> {
-        let sets = ["〽️", "💠", "🌀", "🔰", "💢", "〰️", "🔺", "🔸", "♦️"]
-        let pairs = Int.random(in: 4..<sets.count)
-        return SetGame<String>(numberOfPairsOfCards: pairs) { pairIndex in
-            return sets[pairIndex]
-        }
-    }
+    @Published private var model: SetGame = SetGame()
 
     // MARK: Access to the Model
     
-    var cards: Array<SetGame<String>.Card> {
-        model.cards
+    var deck: Array<SetGame.Card> {
+        model.deck
     }
     
     var score: Int {
@@ -31,12 +23,11 @@ class SetGameViewModel: ObservableObject {
     
     // MARK: Intents
     
-    func choose(card: SetGame<String>.Card) {
+    func choose(card: SetGame.Card) {
         model.choose(card: card)
     }
-    
+
     func reset() {
-//        theme = themes.randomElement()!
-        model = SetGameViewModel.createSetGame()
+        model = SetGame()
     }
 }

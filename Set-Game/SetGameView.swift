@@ -13,14 +13,14 @@ struct SetGameView: View {
     
     var body: some View {
         VStack {
-            Grid(viewModel.cards) { card in
+            Grid(viewModel.deck) { card in
                 CardView(card: card).onTapGesture {
                     self.viewModel.choose(card: card)
                 }
                 .padding(5)
             }
                 .padding()
-                .font(viewModel.cards.count == 10 ? Font.headline : Font.largeTitle)
+                .font(viewModel.deck.count == 10 ? Font.headline : Font.largeTitle)
             HStack {
                 Text("Score: \(viewModel.score)")
                 Spacer()
@@ -36,7 +36,7 @@ struct SetGameView: View {
 }
 
 struct CardView: View {
-    var card: SetGame<String>.Card
+    var card: SetGame.Card
 
     var body: some View {
         GeometryReader { geometry in
@@ -46,11 +46,13 @@ struct CardView: View {
     
     @ViewBuilder
     private func body(for size: CGSize) -> some View {
-        if card.isFaceUp || !card.isMatched {
-            ZStack {
-                Text(card.content)
-                    .font(Font.system(size: fontSize(for: size)))
-            }
+//        if card.isFaceUp || !card.isMatched {
+//
+//            }
+//        }
+        ZStack {
+            Text(card.shape.rawValue)
+            .font(Font.system(size: fontSize(for: size)))
         }
     }
 
@@ -62,7 +64,7 @@ struct CardView: View {
 struct ContletView_Previews: PreviewProvider {
     static var previews: some View {
         let game = SetGameViewModel()
-        game.choose(card: game.cards[0])
+//        game.choose(card: game.cards[0])
         return SetGameView(viewModel: game)
     }
 }
