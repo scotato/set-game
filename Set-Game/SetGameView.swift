@@ -15,7 +15,7 @@ struct SetGameView: View {
         VStack {
             Grid(viewModel.deck) { card in
                 CardView(card: card).onTapGesture {
-                    self.viewModel.choose(card: card)
+                    self.viewModel.select(card: card)
                 }
                 .padding(5)
             }
@@ -46,25 +46,25 @@ struct CardView: View {
     
     @ViewBuilder
     private func body(for size: CGSize) -> some View {
-//        if card.isFaceUp || !card.isMatched {
-//
-//            }
-//        }
-        ZStack {
+        VStack {
+            Text(card.shapeCount.rawValue)
             Text(card.shape.rawValue)
-            .font(Font.system(size: fontSize(for: size)))
+            Text(card.shading.rawValue)
+            Text(card.color.rawValue)
         }
+        .font(Font.system(size: fontSize(for: size)))
+        .background(card.isSelected ? Color.blue : Color.white)
     }
 
     private func fontSize(for size: CGSize) -> CGFloat {
-        min(size.width, size.height) * 0.65
+        min(size.width, size.height) * 0.2
     }
 }
 
 struct ContletView_Previews: PreviewProvider {
     static var previews: some View {
         let game = SetGameViewModel()
-//        game.choose(card: game.cards[0])
+//        game.select(card: game.cards[0])
         return SetGameView(viewModel: game)
     }
 }
