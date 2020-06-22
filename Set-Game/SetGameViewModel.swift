@@ -17,11 +17,19 @@ class SetGameViewModel: ObservableObject {
         model.deck
     }
     
+    var playCards: Array<SetGame.Card> {
+        model.playCards
+    }
+    
     var score: Int {
         model.score
     }
     
     // MARK: Intents
+    
+    func deal(cards: Int) {
+        model.deal(cards: cards)
+    }
     
     func select(card: SetGame.Card) {
         model.select(card: card)
