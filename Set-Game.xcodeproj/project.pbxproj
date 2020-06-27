@@ -92,6 +92,10 @@
 				D2AD9752249FD8CE00F91540 /* Feature.swift */,
 				D2804A6A249716AF00DDC793 /* Grid.swift */,
 				D2804A69249716AF00DDC793 /* GridLayout.swift */,
+				D2AD974C249FD01800F91540 /* Diamond.swift */,
+				D2AD974E249FD02F00F91540 /* Squiggle.swift */,
+				D2AD9750249FD03C00F91540 /* Oval.swift */,
+				D2AD975424A01BC400F91540 /* Stripes.swift */,
 				D2AD974A249FB4DC00F91540 /* Array+SetMatch.swift */,
 				D2804A72249716E600DDC793 /* Array+Identifiable.swift */,
 				D2804A70249716E600DDC793 /* Array+Only.swift */,
@@ -100,10 +104,6 @@
 				D2AD9749249E831500F91540 /* README.md */,
 				D2CFE5942495D0550043F1D2 /* Assets.xcassets */,
 				D2CFE5962495D0550043F1D2 /* Preview Content */,
-				D2AD974C249FD01800F91540 /* Diamond.swift */,
-				D2AD974E249FD02F00F91540 /* Squiggle.swift */,
-				D2AD9750249FD03C00F91540 /* Oval.swift */,
-				D2AD975424A01BC400F91540 /* Stripes.swift */,
 			);
 			path = "Set-Game";
 			sourceTree = "<group>";
