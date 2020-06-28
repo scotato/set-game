@@ -49,10 +49,14 @@ struct CardView: View {
     
     @ViewBuilder
     private func body(for size: CGSize) -> some View {
-        ForEach((1...card.shapeCount.rawValue), id: \.self) {_ in
-            Feature(self.card)
+        VStack {
+            ForEach((1...card.shapeCount.rawValue), id: \.self) {_ in
+                Feature(self.card)
+                    .frame(height: size.height / 5)
+            }
         }
             .padding()
+            .frame(height: size.height)
             .background(RoundedRectangle(cornerRadius: 16.0).stroke(card.isSelected ? Color.green : Color.blue, lineWidth: 4))
 
     }
