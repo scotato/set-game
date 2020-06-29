@@ -50,12 +50,23 @@ struct SetGame {
         }
     }
     
+    mutating func deselectCards() {
+        for card in selectedCards {
+            if let chosenIndex: Int = deck.fistIndex(matching: card) {
+                self.deck[chosenIndex].isSelected = false
+            }
+        }
+    }
+    
     mutating func select(card: Card) {
         if let chosenIndex: Int = deck.fistIndex(matching: card) {
             
             let isSelecting = !card.isSelected
             
             if isSelecting && selectedCards.count < 3 {
+                self.deck[chosenIndex].isSelected = true
+            } else if isSelecting {
+                self.deselectCards()
                 self.deck[chosenIndex].isSelected = true
             }
             

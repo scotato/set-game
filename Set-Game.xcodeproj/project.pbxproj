@@ -85,9 +85,9 @@
 			children = (
 				D2CFE58E2495D04F0043F1D2 /* AppDelegate.swift */,
 				D2CFE5902495D04F0043F1D2 /* SceneDelegate.swift */,
-				D2804A71249716E600DDC793 /* SetGameView.swift */,
-				D2804A7D24971CCF00DDC793 /* SetGameViewModel.swift */,
 				D2804A6F249716E600DDC793 /* SetGame.swift */,
+				D2804A7D24971CCF00DDC793 /* SetGameViewModel.swift */,
+				D2804A71249716E600DDC793 /* SetGameView.swift */,
 				D2804A6D249716E600DDC793 /* Cardify.swift */,
 				D2AD9752249FD8CE00F91540 /* Feature.swift */,
 				D2804A6A249716AF00DDC793 /* Grid.swift */,

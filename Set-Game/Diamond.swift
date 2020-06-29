@@ -22,6 +22,7 @@ struct Diamond: Shape {
         p.addLine(to: centerBottom)
         p.addLine(to: middleRight)
         p.addLine(to: centerTop)
+        p.closeSubpath()
         return p
     }
 }
