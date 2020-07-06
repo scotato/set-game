@@ -60,3 +60,4 @@ Variants were included with the Set game that involve different mechanics to fin
 - [x] 17.You must use an enum as a meaningful part of your solution. 
 - [x] 18.You must use a closure (i.e. a function as an argument) as a meaningful part of your solution. 
 - [x] 19.Your UI should work in portrait or landscape on any iOS device. This probably will not require any work on your part (that’s part of the power of SwiftUI), but be sure to experiment with running on different simulators in Xcode to be sure. 
+
